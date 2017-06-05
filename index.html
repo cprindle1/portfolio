@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html ng-app="portfolio">
+  <head>
+    <meta charset="utf-8">
+    <title>Charlie Prindle Portfolio</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel = "stylesheet" href="style.css"/>
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+  <body ng-controller = "mainController as ctrl">
+    <div id="header">
+      <div id="title">
+        <h1 id="name">Charlie Prindle| </h1><h1>Web Developer</h1>
+      </div>
+      <div id="headLinks">
+        <div class = "headerLink" ng-click="ctrl.showSelect('about')" ng-class="{'underline' : ctrl.show=='about'}">About</div>
+        <div class = "headerLink" ng-click="ctrl.showSelect('projects')" ng-class="{'underline' : ctrl.show=='projects'}">Projects</div>
+        <div class = "headerLink" ng-click="ctrl.showSelect('connect')" ng-class="{'underline' : ctrl.show=='connect'}">Connect</div>
+        <div class = "headerLink" ng-click="ctrl.showSelect('resume')" ng-class="{'underline' : ctrl.show=='resume'}">Resume</div>
+    </div>
+    </div>
+
+    <div id = "contentWrapper">
+      <img src="img/8-1.jpg" style="visibility: hidden;"/>
+    <div id="content">
+    <div ng-if="ctrl.show=='about'" id="about">
+      <div>
+        <div>
+
+          <h2 class = "contentContainer">About</h2>
+          <p id="summary">
+            Mr. Prindle is an Associate at Booz Allen Hamilton. He is an experienced Enterprise Architect with extensive work in DoDAF 2.0 Architecture development. Mr. Prindle has over 10 Years of experience as a manager in the retail industry. This has allowed him to develop strong project and workload management, task management, and communication skills.
+          </p>
+            <h3 id="keySkills">Key Skills</h3>
+            <ul id="skillsList">
+              <li class="skill">Full Stack Development,</li>
+              <li class="skill">HTML,</li>
+              <li class="skill">Javascript,</li>
+              <li class="skill">jQuery,</li>
+              <li class="skill">angularjs,</li>
+              <li class="skill">Ruby on Rails,</li>
+              <li class="skill">Python,</li>
+              <li class="skill">Java,</li>
+              <li class="skill">MongoDB,</li>
+              <li class="skill">PostgreSQL,</li>
+              <li class="skill">Node.js,</li>
+              <li class="skill">JSON,</li>
+              <li class="skill">CSS,</li>
+              <li class="skill">SASS</li>
+
+
+
+            </ul>
+        </div>
+      </div>
+    </div>
+    <div ng-if="ctrl.show=='projects'" id="projects">
+      <h2 class = "contentContainer">Projects</h2>
+      <div id="projectContainer">
+        <div class = "projectLink" ng-click="ctrl.showProject('battleship')" ng-class="{'selected' : ctrl.project=='battleship'}"><h3>Battleship</h3></div>
+        <div class = "projectLink" ng-click="ctrl.showProject('codesnips')" ng-class="{'selected' : ctrl.project=='codesnips'}"><h3>CodeSnips</h3></div>
+        <div class = "projectLink" ng-click="ctrl.showProject('beerwall')" ng-class="{'selected' : ctrl.project=='beerwall'}"><h3>Beers On The Wall</h3></div>
+        <div class = "projectLink" ng-click="ctrl.showProject('stocker')" ng-class="{'selected' : ctrl.project=='stocker'}"><h3>Stocker</h3></div>
+        <div class = "projectLink" ng-click="ctrl.showProject('dfs')" ng-class="{'selected' : ctrl.project=='dfs'}"><h3>DFS Lineup Optimizer</h3></div>
+
+      </div>
+      <div id='projects'>
+
+      <div ng-if="ctrl.project=='battleship'" >
+        <a href="https://cprindle1.github.io/" target="_blank"><img src="img/Battleship.png" /></a>
+        <div class="description">
+          <p>
+          Based on the classic two player guessing game.  Play against your friend or play a one player game against the computer.  In one player mode, select from 3 dificulty levels; easy, medium, and hard.  See if you can sink your oppnenets ships before your fleet is sunk!</p>
+          <p>Technical Details:
+          HTML5, Javascript, jQuery, CSS</p>
+          <a href="https://github.com/cprindle1/cprindle1.github.io" target="_blank"><img src="img/25231.svg" style="height:30px; width:30px;" /></a>
+        </div>
+      </div>
+      <div ng-if="ctrl.project=='codesnips'" >
+        <a href="https://stark-plateau-60254.herokuapp.com/" target="_blank"><img src="img/codesnips.png" /></a>
+        <div class="description">
+          <p>Store and share small blocks of code. Keep your code 'private' or share it with everyone.  Search the repository and save blocks of code to your profile for later use.</p>
+          <p>Guest Login: username: guest password: guestpass</p>
+          <p>Technical Details:
+          HTML5, Javascript, jQuery CSS, Express, MongoDB, node.js, bcrypt</p>
+          <a href="https://github.com/cprindle1/project2" target="_blank"><img src="img/25231.svg" style="height:30px; width:30px;" /></a>
+        </div>
+      </div>
+      <div ng-if="ctrl.project=='beerwall'" >
+        <a href="https://beerswall.herokuapp.com/" target="_blank"><img src="img/beerswall.png" /></a>
+        <div class="description">
+          <p>Sort through various beer styles to find what you're looking for.  See on you like? Save it to your profile.</p>
+          <p>Technical Details:
+          HTML5, Javascript, AngularJS, jQuery, CSS, Express, MongoDB, node.js, bcrypt</p>
+          <a href="https://github.com/cprindle1/beersonthewall" target="_blank"><img src="img/25231.svg" style="height:30px; width:30px;" /></a>
+        </div>
+      </div>
+      <div ng-if="ctrl.project=='stocker'" >
+        <a href="https://stocker-proj.herokuapp.com/" target="_blank"><img src="img/stocker.png" /></a>
+        <div class="description">
+          <p>Stock market investment simulation.  Start out with $10,000, invest and watch your portfolio grow!  </p>
+          <p>Technical Details:
+          HTML5, Ruby on Rails, Javascript, AngularJS, CSS, Express, PostgreSQL, node.js, bcrypt</p>
+          <a href="https://github.com/cprindle1/stock_app_frontend" target="_blank"><img src="img/25231.svg" style="height:30px; width:30px;" />Front End</a><br/><br/><br/>
+          <a href="https://github.com/cprindle1/stock_app_backend" target="_blank"><img src="img/25231.svg" style="height:30px; width:30px;" />API</a>
+        </div>
+      </div>
+      <div ng-if="ctrl.project=='dfs'" >
+        <a href="https://dfsoptimizer.herokuapp.com/" target="_blank"><img src="img/Optimizer.png" /></a>
+        <div class="description">
+          <p>Optimize your DFS lineup for Fantasy Football.  Sort through players, exclude players, and generate the optimal lineup</p>
+          <p>Technical Details:
+          HTML5, Ruby on Rails, Javascript, AngularJS, CSS, Express, PostgreSQL, node.js</p>
+          <a href="https://github.com/cprindle1/optimizer_app_frontend" target="_blank"><img src="img/25231.svg" style="height:30px; width:30px;" />Front End</a><br/><br/><br/>
+          <a href="https://github.com/cprindle1/optimizer_app_api" target="_blank"><img src="img/25231.svg" style="height:30px; width:30px;" />API</a>
+        </div>
+      </div>
+    </div>
+
+    </div>
+    <div ng-if="ctrl.show=='connect'" class="connect">
+      <h2 class = "contentContainer">Connect</h2>
+        <a class = "externalLink" href="https://github.com/cprindle1" target="_blank"><h2 class = "link">GitHub</h2><img src="img/25231.svg" /></a>
+        <a class = "externalLink" href="https://www.linkedin.com/in/charlie-prindle-8aba7393/" target="_blank"><h2 class = "link">LinkedIn</h2><img src="img/34405.svg"/></a>
+    </div>
+    <div ng-if="ctrl.show=='resume'" class="resume">
+      <h2 class = "contentContainer">Resume</h2>
+<p><strong>Prindle_Charles@bah.com</strong></p>
+<p><strong>EDUCATION</strong></p>
+<ul>
+<li>B.S. Administration of Justice, Information Technology Minor, George Mason University, May 2010</li>
+</ul>
+<ul>
+<li>S. General Studies with Information Technology Concentration, Northern Virginia Community College, August 2008</li>
+</ul>
+<p>Security Clearance</p>
+<ul>
+<li>Top Secret</li>
+</ul>
+<p>Certifications</p>
+<ul>
+<li>PMP</li>
+<li>ITIL Foundation Certificate in IT Service Management</li>
+<li>Business Process Modeling Notation (BPMN) 2.0</li>
+</ul>
+<p><strong>Key Skills</strong><strong>:</strong> Full Stack Web Development, HTML, CSS, SASS, Bootstrap, Skeleton, JavaScript, Angular JS, jQuery, Express, Node.js, JSON, SQL, MongoDB, PostgreSQL, GIT, PMP, BPMN 2.0, DoDAF 2.0, Data Architecture, Research and Analysis, Strategic Planning, Software AG ARIS, System Architect, MEGA, Microsoft SharePoint, Microsoft Office, Microsoft Visual Studio, Microsoft Visio, Written Communications</p>
+<p>SUMMARY OF EXPERIENCE</p>
+<p>Mr. Prindle is an Associate at Booz Allen Hamilton. He is an experienced Enterprise Architect with extensive work in DoDAF 2.0 Architecture development. Mr. Prindle has over 10 Years of experience as a manager in the retail industry. This has allowed him to develop strong project and workload management, task management, and communication skills.</p>
+<p>RELEVANT EXPERIENCE</p>
+<p><strong>Booz Allen Hamilton, September 2010-Present</strong></p>
+<p><strong>General Assembly Web Development Immersive Training, March 2017-June 2017</strong></p>
+<p><strong>Full Stack Web Developer</strong></p>
+<p>Mr. Prindle has completed the GA WDIR course. Throughout this course, Mr. Prindle had the opportunity to build several web application from the ground up. He designed and developed web applications in various technology stacks. From basic web pages implementing HTML, CSS, Javascript, and jQuery, to a full stack Ruby on Rails application with AngularJS front end, he met aggressive deadlines to deliver web apps exceeding the outlined requirements. Mr. Prindle worked independently as well as in groups to design, develop and deploy these projects. He managed Github repositories to ensure proper workflow and code integration.</p>
+<p><strong>Navy Enterprise Business Solutions, February 2016-February 2017</strong></p>
+<p><strong>Enterprise Architect</strong></p>
+<p>Mr. Prindle supported the Chief Architect for the Navy Enterprise Business Solutions portfolio. His responsibilities included performing reviews of architecture products, creating architecture products in System Architect, reviewing/creating/updating policy and guidance, BPMN modeling support, and establishing the baseline for domain level architecture.</p>
+<p>Mr. Prindle re-wrote the Architecture Development Guide to make it more concise and readable for the intended audience of architecture product developers within the Navy EBS domain. Each relevant set of architecture products is described with an example and a checklist of compliance items which must be met to pass NAV EBS EA review. The guide will support the development of consistent and compliant architecture models across the Navy EBS domain.</p>
+<p>Mr. Prindle developed the baseline of Navy EBS domain level architecture. He analyzed existing architectures within the Navy EBS portfolio to develop domain level viewpoints. He reviewed the existing models within the System Architect tool as well as existing program documentation. The initial baseline includes AV-1, AV-2, CV-1, CV-2, CV-3, CV-6, OV-1, OV-5a, SV-4, SV-5a, and StdV-1.</p>
+<p>Mr. Prindle is responsible for maintaining the StdV-1/2 for the programs within the Navy EBS portfolio (ERP, ePS, and SLDCADA). He monitors DISR releases to identify standards updates. He works with technical POCs for each program to ensure the Standards Views are up to date and any necessary waivers are completed.</p>
+<p><strong>Defense Logistics Agency, November 2011-January 2016</strong></p>
+<p><strong>Enterprise Architect</strong></p>
+<p>As a certified BPMN 2.0 professional, Mr. Prindle lead an effort to model DLA Process Cycle Memorandums (PCMs) in Business Process Modeling Notation (BPMN) 2.0 using Software AG ARIS. Modeling these processes in BPMN 2.0 made a significant improvement on the current methodology of using flowcharts and provided a much higher level of detail to more fully capture the business process. These models will be used to further align the end-to-end processes to the Enterprise Architecture (EA), identify redundancies, and streamline future PCM updates and development by creating a standardized practice across the organization. In this role, Mr. Prindle independently analyzed a variety of PCMs to develop a strategy for the creation of BPMN 2.0 models. He provided strategic advice to the client to enhance EA visibility across the organization and gain stakeholder buy-in. Mr. Prindle lead the implementation through weekly meetings with the client to provide advice on BPMN 2.0 standards, development best practices, and training on advanced BPMN 2.0 modeling. He was also responsible for the development of BPMN 2.0 models and updating the PCM Guidance for the Defense Logistics Agency (DLA) to include BPMN 2.0 modeling methodology.</p>
+<p>Mr. Prindle also provided Architecture support to various DLA programs in the development of various DoDAF products. Mr. Prindle provided training and guidance on development best practices and reviews DoDAF products developed by the project teams for completeness and compliance as well as ensuring integration of the Architecture products. Mr. Prindle reviewed and approved completed DoDAF products and provided recommendations to the Program Manager at System Engineering events. He also guided programs through the BEA Assessment process and ensures the assessments are properly entered in ACART. Mr. Prindle was also responsible for integrating program-level Architectures into the EBS-level Architecture via Software AG ARIS. In addition, Mr. Prindle has been responsible for updating the DISR standards in ARIS for new version releases.</p>
+<p>Mr. Prindle was responsible for the development of the DIV-1/DIV-2 Conceptual/Logical data models for two of the seven subject areas within Enterprise Business System (EBS) for DLA. To develop these models, Mr. Prindle independently identified a variety of input sources by searching various repositories within DLA. He used these sources to identify data entities and attributes within the subject areas in order to create the data model. He participated in collaboration meetings with members of the functional community in order to gain additional input into the content of the data models. Through working with SMEs, Mr. Prindle was able to further the development of the model by more accurately capturing the data that encompasses the business at DLA. He then collaborated with the rest of the Data Architecture team to integrate data models for all seven subject areas within EBS, identify touchpoints, and provide overarching EBS-level DIV-1/DIV-2 Conceptual/Logical data models.</p>
+<p>In addition to his responsibilities as an Enterprise Architect, Mr. Prindle served as an Administrator for the Software AG ARIS tool. He managed multiple databases, monitored user activity via server logs, managed user accounts, developed custom JavaScript reports, and provided guidance to the Chief Architect on tool capabilities.</p>
+<p><strong>The Navy Bureau of Medicine and Surgery, October 2011-December 2011</strong></p>
+<p><strong>Database Developer</strong></p>
+<p>Mr. Prindle provided support to The Navy Bureau of Medicine and Surgery (BUMED) in the development of a database and web front end. Mr. Prindle was responsible for merging data from three different sources into one database to streamline data retrieval and provide BUMED with a tool to query the consolidated data. Mr. Prindle developed an Access database with an ASP.Net front end to enable BUMED to access various deployment and mission data queries from a single consolidated source. He met directly with the Chief of Staff to provide advice on database implementation across multiple departments within BUMED.</p>
+<p><strong>Department of Veterans Affairs, June 2011-August 2011</strong></p>
+<p><strong>SharePoint Administrator</strong></p>
+<p>Mr. Prindle provided support to the Enhance the Veterans Experience and Access to Healthcare (EVEAH) project under the Transformation Twenty-One Total Technology Contract (T4) for the Department of Veterans Affairs (VA). He established a Program Management Environment (PME) site to function as a collaboration site for the Booz Allen Hamilton team and subcontractor team on the project. He briefed project leadership on the features of PME and worked with the PME team to tailor the site to the specific EVEAH project needs.</p>
+<p><strong>Army PM Acquisition Business, January 2011-May 2011</strong></p>
+<p><strong>Data Analyst</strong></p>
+<p>Mr. Prindle provided data gathering and analysis to support the Army PM Acquisition Business. While supporting PM Acquisition Business, Mr. Prindle gathered usage metrics on applications across the business for analysis to develop a solution architecture baseline and provide the PM a versatile decision tool to reduce redundancy cost and improve acquisition performance. He worked with application development leads to compile a summary of each applications functionality as well as point of contact information for 72 applications. This organization of information provided a centralized repository for detailed application data. He then organized and analyzed these metrics to identify optimal timeframes to perform maintenance activities and provide senior leadership with an overview of the application usage. Mr. Prindle's data gathering and analysis skills enabled him to provide an overall view of the PM Acquisition Business's application portfolio and performance of all applications within.</p>
+<p>To perform this analysis, Mr. Prindle developed an Excel spreadsheet that allowed users to input thresholds for determining maintenance windows as well as spikes in usage. This allowed maintenance recommendations to be made based on specific client needs. The spreadsheet implemented a variety of pivot tables and formulas to consolidate thousands of data points into a concise user interface, which allowed users to view application usage on monthly, daily, and hourly levels. Mr. Prindle then integrated the spreadsheet into SharePoint with Excel Services implementation to provide a web-based interface for accessing the analysis data. This streamlined analysis efforts as well as simplified the data updating process. Mr. Prindle then used this tool to identify spikes in data and research the reason for these spikes. Identifying the causes of increased application usage allowed the client to properly allocate resources during these timeframes.</p>
+<p><strong>Booz Allen Hamilton, September 2010-Janurary 2011</strong></p>
+<p>Mr. Prindle also provided support to an Enterprise Architecture proposal analysis project which analyzed EA services being requested and proposed, identified best of breed proposal practices, and analyzed investments to ensure proper investing and increase competitive edge. To perform this analysis, Mr. Prindle worked with proposal managers to collect past proposals. He then identified services offered and analyzed the frequency of these services across all collected proposals. Additionally, proposals were analyzed for common language, graphics, and other best practices. He has also provided market research support to assist with development of a market plan for the Ft. Detrick Market.</p>
+<p><strong>Retail Manager (Various Organizations) August 1998 - February 2009</strong></p>
+<p>During this time, Mr. Prindle worked as a Manager in various capacities in the retail industry. He served as a department manager, assistant manager, and managed a distribution center responsible for nation-wide store stock distribution and customer delivery for the east coast. Mr. Prindle gained experience managing various teams ranging from 5 to 50 employees. He was responsible for managing the profit and loss (P&L) for his locations while maintaining expense budgets. Mr. Prindle was also responsible for recruiting, mentoring, and training employees while maintaining all appropriate documentation for Human resources. Mr. Prindle has a track record of increasing sales in his areas of responsibility and has won multiple awards for his performance in this area. He has also been responsible for the development of training materials that were rolled out for company-wide use.</p>
+
+    </div>
+  </div>
+
+</div>
+<!-- <div id="footer">
+  footer
+</div> -->
+
+  </body>
+</html>
